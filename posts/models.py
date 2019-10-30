@@ -15,3 +15,7 @@ class Posts(models.Model):
 
   def __str__(self):
       return self.title + '-' + self.author
+
+
+class Images(models.Model):
+  images = models.FileField(upload_to = 'posts/%Y/%m/%d',default='/photo.png')

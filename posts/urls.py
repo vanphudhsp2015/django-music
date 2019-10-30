@@ -1,10 +1,9 @@
 from django.urls import path, include
-from posts.views import PostListCreateAPIView, PostsEditAPIView
+from posts.views import PostListCreateAPIView, PostsEditAPIView, ImagesListCreateAPIView
 app_name = 'posts'
 urlpatterns = [
-    path('posts/',include([
-        path('', PostListCreateAPIView.as_view(), name="post-list"),
-        path('<int:pk>/', PostsEditAPIView.as_view(), name="post-edit"),
+    path('images/',include([
+        path('', ImagesListCreateAPIView.as_view(), name="images-list")
     ])),
 ]
 
